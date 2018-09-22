@@ -1,5 +1,5 @@
 let btnSave = document.getElementById("save");
-let apiKeyIntput = document.getElementById('api_key');
+let apiKeyInput = document.getElementById('api_key');
 
 
 // Default from/to languages
@@ -10,20 +10,21 @@ btnSave.addEventListener('click', function(){
   let fromOption = document.getElementById("from")
   let toOption =document.getElementById("to")
   
-  console.log(fromOption.value)
-  console.log(toOption.value)
-  chrome.storage.sync.set({
-    apiKey: apiKeyIntput.value, 
-    from:fromOption.value,
-    to:toOption.value
-  }, function() {
-
+  let values = {apiKey: apiKeyInput.value}
+  
+  if (fromOption != null){
+    values["from"] = fromOption.value
+    values["to"] = toOption.value
+  }
+  chrome.storage.sync.set(values, function(e){
+    if (fromOption == null) fetchLanguages(apiKeyInput.value) // Fetch after setting a valid apiKey
   })
 })
 
 
 chrome.storage.sync.get(["apiKey","from", "to"], function(e){
-  apiKeyIntput.value = e.apiKey;
+  apiKeyInput.value = e.apiKey;
+  console.log(e.from)
   fromLang = e.from || fromLang;
   toLang = e.to || toLang;
   fetchLanguages(e.apiKey);

@@ -55,7 +55,7 @@ main = function () {
 	function fire(selected){
 		chrome.storage.sync.get(["apiKey","from","to"], function(e){
 			apiKey = e.apiKey;
-			lang = e.from + "-" + e.to
+			lang = (e.from || "en") + "-" + (e.to || "tr")
 			apiUrl = 'https://translate.yandex.net/api/v1.5/tr.json/translate?key='+ apiKey + '&lang='+ lang + '&text=';
 
 			sendRequest(selected)
