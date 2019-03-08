@@ -2,6 +2,9 @@
 A Chrome extension that translates selected text.
 
 ## Install
+* Clone or download this repo
+* Go to [Chrome Extensions](chrome://extensions/) and enable Developer Mode
+* Load unpacked -> select the source folder
 * [Get a free Yandex Translate API Key](https://translate.yandex.com/developers/keys)
 * Go to extension options, paste the API Key then save
 

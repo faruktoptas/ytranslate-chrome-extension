@@ -23,7 +23,7 @@ btnSave.addEventListener('click', function(){
 
 
 chrome.storage.sync.get(["apiKey","from", "to"], function(e){
-  apiKeyInput.value = e.apiKey;
+  apiKeyInput.value = e.apiKey || "";
   console.log(e.from)
   fromLang = e.from || fromLang;
   toLang = e.to || toLang;
