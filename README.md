@@ -12,7 +12,7 @@ A Chrome extension that translates selected text.
 Choose text while pressing 'Alt' then selected text will be translated.
 
 
-![preview](https://user-images.githubusercontent.com/1595227/45922186-c8b9e800-becd-11e8-9900-f745110947e9.png)
+![preview](https://user-images.githubusercontent.com/1595227/54058961-7d3f9000-4208-11e9-8be9-c117632de722.gif)
 
 ## Options
 
